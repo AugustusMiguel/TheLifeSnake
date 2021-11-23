@@ -1,0 +1,6 @@
+ports:
+  - port: 3000
+    onOpen: open-preview
+tasks:
+  - before: if [[ -z "$experiment" ]]; then cd versoes/versaofinal; else cd versoes/$experiment; fi
+    command: nvm install 16.12.0 && npm install && npm start
