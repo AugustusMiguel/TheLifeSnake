@@ -40,7 +40,7 @@ function drawPot(context, fruit, game, potionsImg) {
     x *= pixelsPerFields
     y *= pixelsPerFields
 
-    //our pot size on img
+    //Tamanho da pot
     const pictSize = 16
     let column = Math.floor((quantity - 1) % 10)
     let line = Math.floor((quantity - 1) / 10)
@@ -56,14 +56,14 @@ function drawPot(context, fruit, game, potionsImg) {
     context.drawImage(potionsImg, spriteY, spriteX, 16, 16, x, y, pixelsPerFields, pixelsPerFields);
 
     if (showPotsValue) {
-        //show texts
+        
         context.fillStyle = 'black'
         context.font = "10px Arial";
         context.fillText(quantity.toString(), x, y - 3);
     }
 }
 
-//all skin is based on 5 pixels?, this function convert for responsive values
+
 function responsiveMeasure(initialValue, pixelsPerFields) {
     return initialValue * (pixelsPerFields / 5)
 }
@@ -81,11 +81,11 @@ function drawPlayer(screenContext, player, game, isCurrentPlayer = false) {
     x *= pixelsPerFields
     y *= pixelsPerFields
 
-    // Draw face
+    // Rosto
     screenContext.fillStyle = faceColor
     screenContext.fillRect(x, y, pixelsPerFields, pixelsPerFields)
 
-    // Draw eyes and mouth
+    // Olhos e boca
     screenContext.fillStyle = eyeAndMouthColors
     screenContext.fillRect(x + responsiveMeasure(1, pixelsPerFields), y + responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields))
     screenContext.fillRect(x + responsiveMeasure(3, pixelsPerFields), y + responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields))
@@ -104,7 +104,7 @@ function drawFruit(screenContext, fruit, game) {
     y *= pixelsPerFields
     let color = getFruitColor(fruit)
 
-    // Draw strawberry body
+    
     screenContext.fillStyle = color
     screenContext.fillRect(x, y + responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(2, pixelsPerFields))
     screenContext.fillRect(x + responsiveMeasure(4, pixelsPerFields), y + responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(2, pixelsPerFields))
@@ -112,7 +112,7 @@ function drawFruit(screenContext, fruit, game) {
     screenContext.fillRect(x + responsiveMeasure(3, pixelsPerFields), y + responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(3, pixelsPerFields))
     screenContext.fillRect(x + responsiveMeasure(2, pixelsPerFields), y + responsiveMeasure(2, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(3, pixelsPerFields))
 
-    // Draw green leaf
+    
     screenContext.fillStyle = '#00a933'
     screenContext.fillRect(x + responsiveMeasure(1, pixelsPerFields), y, responsiveMeasure(3, pixelsPerFields), responsiveMeasure(1, pixelsPerFields))
     screenContext.fillRect(x + responsiveMeasure(2, pixelsPerFields), y + responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields), responsiveMeasure(1, pixelsPerFields))
